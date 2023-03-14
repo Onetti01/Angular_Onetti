@@ -3,31 +3,23 @@
     <mat-tab label="About">
       <p *ngIf="game.parent_platforms?.length">
         Platforms:
-        <span *ngFor="let game of game.parent_platforms; let last = last"
-          >{{ game.platform.name }}
+        <span *ngFor="let game of game.parent_platforms; let last = last">{{ game.platform.name }}
           <span *ngIf="!last">, </span>
         </span>
       </p>
       <p *ngIf="game.publishers?.length" class="game-tabs-par">
         Publishers:
-        <span *ngFor="let publisher of game.publishers; let last = last"
-          >{{ publisher.name }}
+        <span *ngFor="let publisher of game.publishers; let last = last">{{ publisher.name }}
           <span *ngIf="!last">, </span>
         </span>
       </p>
       >
       <p *ngIf="game.website" class="game-tabs-par">
         Website:
-        <a
-          class="game-tabs-link"
-          href="{{ game.website }}"
-          target="_blank"
-        >{{ game.website }}</a>
+        <a class="game-tabs-link" href="{{ game.website }}" target="_blank">{{ game.website }}</a>
       </p>
       >
-      <div class="game-description"
-      [innerHTML]="game.description"
-      ></div>
+      <div class="game-description" [innerHTML]="game.description"></div>
       <p class="game-tabs-votes">
         <ng-container *ngFor="let rating of game.ratings">
           <span *ngIf="rating.title === 'exceptional'">
@@ -43,19 +35,13 @@
     </mat-tab>
 
     <mat-tab label="Screenshots" *ngIf="game.screenshots?.length">
-      <img
-        class="game-screenshot"
-        *ngFor="let screenshot of game.screenshots"
-        src="{{ screenshot.image }}"
-        alt="screenshot"
-      />
+      <img class="game-screenshot" *ngFor="let screenshot of game.screenshots" src="{{ screenshot.image }}"
+        alt="screenshot" />
     </mat-tab>
 
     <mat-tab label="Trailers" *ngIf="game.trailers?.length">
-      <video class="game-trailer" 
-      controls
-      *ngFor="let trailer of game.trailers">
-        <source src="{{ trailer.data?.max }}" type="video/mp4" />
+      <video class="game-trailer" controls *ngFor="let trailer of game.trailers">
+        <source src="{{ trailer.data.max }}" type="video/mp4" />
         Your browser does no support the video tag
       </video>
     </mat-tab>
