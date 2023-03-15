@@ -1,3 +1,4 @@
+
 .search {
     &-container {
         width: 100%;
@@ -53,6 +54,24 @@
     margin-left: 10px;
     color: rgb(247, 10, 10);
     font-weight: 700;
+    display: flex;
     cursor: pointer;
     text-decoration: none;
+    animation: shake-baidu 2s ease 0s infinite;
+    animation-play-state: running;
 }
+
+.an{
+    display: inline-block;
+}
+
+@keyframes shake-baidu {
+    from    { transform: rotate(0deg); }
+    4%      { transform: rotate(5deg); }
+    12.5%   { transform: rotate(-5deg); }
+    21%     { transform: rotate(5deg); }
+    29%     { transform: rotate(-5deg); }
+    37.5%   { transform: rotate(5deg); }
+    46%     { transform: rotate(-5deg); }
+    50%,to  { transform: rotate(0deg); }
+  }

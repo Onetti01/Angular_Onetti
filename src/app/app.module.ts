@@ -34,7 +34,6 @@ import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     //Moduls afegits
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     GaugeModule.forRoot(),
